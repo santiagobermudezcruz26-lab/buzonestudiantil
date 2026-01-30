@@ -32,8 +32,6 @@ body{
 
 }
 
-
-
 .container{
 
   background:white;
@@ -50,13 +48,9 @@ body{
 
 }
 
-
-
 h1,h2{text-align:center;}
 
 p{text-align:center;color:#444;font-size:14px;margin-bottom:25px;}
-
-
 
 button{
 
@@ -76,33 +70,15 @@ button{
 
   cursor:pointer;
 
-  transition:background 0.3s;
-
 }
 
-
-
-button:disabled{
-
-  background:#999;
-
-  cursor:not-allowed;
-
-}
-
-
+button:disabled{background:#999;}
 
 button:hover:not(:disabled){background:#0a3d62;}
 
-
-
 .hidden{display:none;}
 
-
-
 label{font-weight:600;display:block;margin-bottom:6px;}
-
-
 
 select, textarea{
 
@@ -120,27 +96,9 @@ select, textarea{
 
 }
 
-
-
 textarea{resize:none;height:120px;}
 
-
-
-/* SEDES */
-
-.sedes{
-
-  display:flex;
-
-  flex-direction:column;
-
-  gap:12px;
-
-  margin-bottom:20px;
-
-}
-
-
+.sedes{display:flex;flex-direction:column;gap:12px;margin-bottom:20px;}
 
 .sede{
 
@@ -158,13 +116,7 @@ textarea{resize:none;height:120px;}
 
   align-items:center;
 
-  font-size:16px;
-
-  transition:0.2s;
-
 }
-
-
 
 .sede.active{
 
@@ -174,25 +126,9 @@ textarea{resize:none;height:120px;}
 
 }
 
-
-
-.check{
-
-  color:#1e90ff;
-
-  font-size:20px;
-
-  display:none;
-
-}
-
-
+.check{color:#1e90ff;font-size:20px;display:none;}
 
 .sede.active .check{display:block;}
-
-
-
-/* SEMÁFORO */
 
 .colors{
 
@@ -203,8 +139,6 @@ textarea{resize:none;height:120px;}
   margin-bottom:22px;
 
 }
-
-
 
 .color-option{
 
@@ -217,8 +151,6 @@ textarea{resize:none;height:120px;}
   cursor:pointer;
 
 }
-
-
 
 .circle{
 
@@ -234,19 +166,13 @@ textarea{resize:none;height:120px;}
 
 }
 
-
-
 .green{background:#2ecc71;}
 
 .yellow{background:#f1c40f;}
 
 .red{background:#e74c3c;}
 
-
-
 input[type="radio"]{display:none;}
-
-
 
 input[type="radio"]:checked + .circle{
 
@@ -255,8 +181,6 @@ input[type="radio"]:checked + .circle{
   transform:scale(1.15);
 
 }
-
-
 
 .footer{
 
@@ -282,8 +206,6 @@ input[type="radio"]:checked + .circle{
 
 
 
-<!-- INICIO -->
-
 <div id="inicio">
 
   <h1>📩 Buzón de sugerencias<br>Contraloría 2026</h1>
@@ -296,43 +218,21 @@ input[type="radio"]:checked + .circle{
 
 
 
-<!-- SEDES -->
-
 <div id="sedes" class="hidden">
 
   <h2>¿En qué sede estás? 🤔</h2>
 
-
-
   <div class="sedes">
 
-    <div class="sede" onclick="seleccionarSede(this,'Sede Central')">
+    <div class="sede" onclick="seleccionarSede(this,'Sede Central')">Sede Central <span class="check">✓</span></div>
 
-      Sede Central <span class="check">✓</span>
+    <div class="sede" onclick="seleccionarSede(this,'Sede Don Bosco')">Sede Don Bosco <span class="check">✓</span></div>
 
-    </div>
+    <div class="sede" onclick="seleccionarSede(this,'Sede La Monguí')">Sede La Monguí <span class="check">✓</span></div>
 
-    <div class="sede" onclick="seleccionarSede(this,'Sede Don Bosco')">
-
-      Sede Don Bosco <span class="check">✓</span>
-
-    </div>
-
-    <div class="sede" onclick="seleccionarSede(this,'Sede La Monguí')">
-
-      Sede La Monguí <span class="check">✓</span>
-
-    </div>
-
-    <div class="sede" onclick="seleccionarSede(this,'Sede Pombo')">
-
-      Sede Pombo <span class="check">✓</span>
-
-    </div>
+    <div class="sede" onclick="seleccionarSede(this,'Sede Pombo')">Sede Pombo <span class="check">✓</span></div>
 
   </div>
-
-
 
   <button id="btnContinuar" onclick="mostrarFormulario()" disabled>Continuar</button>
 
@@ -340,13 +240,9 @@ input[type="radio"]:checked + .circle{
 
 
 
-<!-- FORMULARIO -->
-
 <div id="formulario" class="hidden">
 
 <form action="https://formsubmit.co/contralorsantiago2026@gmail.com" method="POST">
-
-
 
 <input type="hidden" name="Sede" id="sedeInput">
 
@@ -356,17 +252,15 @@ input[type="radio"]:checked + .circle{
 
 <input type="hidden" name="_template" value="table">
 
+<input type="hidden" name="_next" value="gracias.html">
+
 
 
 <label>Grado</label>
 
-<select name="Grado" required>
+<select name="Grado" id="gradoSelect" required>
 
   <option value="">Selecciona tu grado</option>
-
-  <option>Sexto</option><option>Séptimo</option><option>Octavo</option>
-
-  <option>Noveno</option><option>Décimo</option><option>Once</option>
 
 </select>
 
@@ -376,29 +270,11 @@ input[type="radio"]:checked + .circle{
 
 <div class="colors">
 
-  <label class="color-option">
+  <label class="color-option"><input type="radio" name="Nivel" value="Cosas buenas" required><span class="circle green"></span><span>Bueno</span></label>
 
-    <input type="radio" name="Nivel" value="Cosas buenas" required>
+  <label class="color-option"><input type="radio" name="Nivel" value="Puede mejorar"><span class="circle yellow"></span><span>Mejorar</span></label>
 
-    <span class="circle green"></span><span>Bueno</span>
-
-  </label>
-
-  <label class="color-option">
-
-    <input type="radio" name="Nivel" value="Puede mejorar">
-
-    <span class="circle yellow"></span><span>Mejorar</span>
-
-  </label>
-
-  <label class="color-option">
-
-    <input type="radio" name="Nivel" value="Situación delicada">
-
-    <span class="circle red"></span><span>Delicado</span>
-
-  </label>
+  <label class="color-option"><input type="radio" name="Nivel" value="Situación delicada"><span class="circle red"></span><span>Delicado</span></label>
 
 </div>
 
@@ -452,6 +328,10 @@ I.E. Carlos Ramírez París – Cúcuta, Colombia © 2026
 
 let sedeSeleccionada = "";
 
+const gradosCentral = ["Sexto","Séptimo","Octavo","Noveno","Décimo","Once"];
+
+const gradosOtras = ["Sexto","Séptimo","Octavo","Noveno"];
+
 
 
 function mostrarSedes(){
@@ -462,13 +342,11 @@ function mostrarSedes(){
 
 }
 
-
-
-function seleccionarSede(elemento, sede){
+function seleccionarSede(el, sede){
 
   document.querySelectorAll(".sede").forEach(s=>s.classList.remove("active"));
 
-  elemento.classList.add("active");
+  el.classList.add("active");
 
   sedeSeleccionada = sede;
 
@@ -476,9 +354,31 @@ function seleccionarSede(elemento, sede){
 
   document.getElementById("btnContinuar").disabled = false;
 
+  actualizarGrados();
+
 }
 
+function actualizarGrados(){
 
+  const select = document.getElementById("gradoSelect");
+
+  select.innerHTML = '<option value="">Selecciona tu grado</option>';
+
+  const grados = sedeSeleccionada === "Sede Central" ? gradosCentral : gradosOtras;
+
+  grados.forEach(g=>{
+
+    const o = document.createElement("option");
+
+    o.value = g;
+
+    o.textContent = g;
+
+    select.appendChild(o);
+
+  });
+
+}
 
 function mostrarFormulario(){
 
