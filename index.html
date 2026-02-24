@@ -131,14 +131,12 @@ input[type="radio"]:checked + .circle{
 <body>
 <div class="container">
 
-<!-- INICIO -->
 <div id="inicio">
   <h1>📩 Buzón de sugerencias<br>Contraloría 2026</h1>
   <p>Hola querido estudiante 😁<br>Haz clic en continuar para enviar tu sugerencia.</p>
   <button onclick="mostrarSedes()">Continuar</button>
 </div>
 
-<!-- SEDES -->
 <div id="sedes" class="hidden">
   <h2>¿En qué sede estás? 🤔</h2>
   <div class="sedes">
@@ -150,7 +148,6 @@ input[type="radio"]:checked + .circle{
   <button id="btnContinuar" onclick="mostrarJornada()" disabled>Continuar</button>
 </div>
 
-<!-- JORNADA -->
 <div id="jornada" class="hidden">
   <h2>¿En qué jornada estás? ⏰</h2>
   <div class="sedes">
@@ -158,7 +155,7 @@ input[type="radio"]:checked + .circle{
       🌅 Jornada Mañana <span class="check">✓</span>
     </div>
     <div class="sede" onclick="seleccionarJornada(this,'Jornada Tarde')">
-      🌇 Jornada Tarde (Primaria) <span class="check">✓</span>
+      🌇 Jornada Tarde <span class="check">✓</span>
     </div>
   </div>
   <button id="btnContinuarJornada" onclick="mostrarFormulario()" disabled>
@@ -166,7 +163,6 @@ input[type="radio"]:checked + .circle{
   </button>
 </div>
 
-<!-- FORMULARIO -->
 <div id="formulario" class="hidden">
 <form action="https://formsubmit.co/contralorsantiago2026@gmail.com" method="POST">
 
@@ -291,7 +287,19 @@ function actualizarGrados(){
 
   }
 
-  else{
+  else if(sedeSeleccionada === "Sede Pombo"){
+
+    if(jornadaSeleccionada === "Jornada Mañana"){
+      grados = ["Quinto","Sexto","Séptimo","Octavo","Noveno"];
+    }
+
+    if(jornadaSeleccionada === "Jornada Tarde"){
+      grados = ["Primero","Segundo","Tercero","Cuarto"];
+    }
+
+  }
+
+  else{ // Don Bosco
 
     if(jornadaSeleccionada === "Jornada Mañana"){
       grados = ["Sexto","Séptimo","Octavo","Noveno"];
