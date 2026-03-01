@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gracias por tu sugerencia</title>
+
+<style>
+body{
+  margin:0;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background:linear-gradient(135deg,#0a3d62,#1a7709);
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.container{
+  background:white;
+  width:100%;
+  max-width:500px;
+  padding:40px;
+  border-radius:18px;
+  box-shadow:0 12px 35px rgba(0,0,0,0.3);
+  text-align:center;
+  animation:fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+h1{
+  margin-bottom:15px;
+}
+
+p{
+  color:#555;
+  margin-bottom:25px;
+}
+
+button{
+  background:#0035ff;
+  color:white;
+  border:none;
+  padding:12px 20px;
+  border-radius:10px;
+  font-size:16px;
+  cursor:pointer;
+  transition:all 0.3s ease;
+}
+
+button:hover{
+  background:#0a3d62;
+  transform:translateY(-2px);
+  box-shadow:0 6px 15px rgba(0,0,0,0.2);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>✅ ¡Sugerencia enviada!</h1>
+  <p>
+    Gracias por participar.<br>
+    Tu mensaje ha sido enviado correctamente a la Contraloría 2026.
+  </p>
+
+  <button onclick="volver()">Enviar otra sugerencia</button>
+</div>
+
+<script>
+function volver(){
+  window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
